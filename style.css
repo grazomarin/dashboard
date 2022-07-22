@@ -1,22 +1,93 @@
+@font-face {
+    font-family: 'circular';
+    src: url(fonts/CircularStd-Medium.woff2) format('woff2');
+}
+
+:root {
+    --main-dark: #111419;
+    --main-light: #393E46;
+    --secondary: #00ADB5;
+    --font: #ccc;
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'circular';
 }
 
 body {
     margin: 0;
+    background-color: black;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3.5fr; 
+    grid-template-columns: minmax(150px, 1fr) 3.5fr; 
     grid-template-rows: 1fr 4fr;
     height: 100vh;
 }
 
 .sidebar {
     grid-row: 1/3;
+    display: grid;
+    align-content: start;
+    background-color: var(--main-dark);
+    margin: 9px;
+    border-radius: 8px;
 }
+
+.sidebar > div {
+    height: 44px;
+    display: flex;
+    padding-left: min(40px, 2vw);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+a {
+    display: flex;
+    height: inherit;
+    text-decoration: none;
+    color: var(--font);
+    align-items: center;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+.sidebar > div:nth-child(1) {
+    width: 100%;
+    height: 80px;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.sidebar > div:nth-child(1) a {
+    color: var(--secondary);
+}
+
+.sidebar > div:nth-child(7) {
+    margin-bottom: 25px;
+}
+
+
+svg {
+    box-sizing: content-box;
+    width: auto;
+    padding: 0 10px 4px 0;
+    fill: var(--font);
+    /* make the hover color change when the link is hovered */
+}
+
 
 .header {
     grid-column: 2/3;
+    background-color: var(--main-dark);
+    margin: 9px 9px 0 0;
+    border-radius: 8px;
+}
+
+.main {
+    background-color: var(--main-dark);
+    margin: 9px 9px 9px 0;
+    border-radius: 8px;
 }
