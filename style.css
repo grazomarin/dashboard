@@ -13,6 +13,7 @@
 * {
     box-sizing: border-box;
     font-family: 'circular';
+    color: var(--font);
 }
 
 body {
@@ -47,7 +48,6 @@ a {
     display: flex;
     height: inherit;
     text-decoration: none;
-    color: var(--font);
     align-items: center;
 }
 
@@ -84,6 +84,71 @@ a:hover {
     background-color: var(--main-dark);
     margin: 9px 9px 0 0;
     border-radius: 8px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: minmax(500px, 1fr);
+}
+
+.search {
+    margin: 7px 25px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search > div:nth-child(2) {
+    display: flex;
+    grid-template-columns: .8fr min-content 4fr;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+
+.bell:hover {
+    fill: var(--secondary);
+}
+
+#searchBar {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    color: var(--font);
+    border: none;
+    width: clamp(140px, 22vw, 450px);
+    border-radius: 16px;
+    padding: 3px 8px;
+    font-size: 16px;
+    background-color: rgba(204, 204, 204, 0.2);
+}
+
+#searchBar:focus {
+    outline: solid 2px var(--secondary);
+    outline-offset: 3px;
+}
+
+.searchIcon, .bell {
+    box-sizing: content-box;
+    width: auto;
+    fill: var(--font);
+    background-color: none;
+    cursor:  pointer;
+}
+
+.searchIcon {
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 7px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .main {
