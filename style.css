@@ -22,7 +22,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(150px, 1fr) 3.5fr; 
+    grid-template-columns: minmax(175px, 1fr) 3.5fr; 
     grid-template-rows: 1fr 4fr;
     height: 100vh;
 }
@@ -70,12 +70,12 @@ a:hover {
 }
 
 
-svg {
+.icon {
     box-sizing: content-box;
     width: auto;
     padding: 0 10px 4px 0;
     fill: var(--font);
-    /* make the hover color change when the link is hovered */
+    background-color: var(--main-dark);
 }
 
 
