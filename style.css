@@ -23,8 +23,8 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(175px, 1fr) 3.5fr; 
-    grid-template-rows: 1.3fr 4fr;
+    grid-template-columns: minmax(175px, 1fr) minmax(490px, 80%); 
+    grid-template-rows: min-content 4fr;
     height: 100vh;
 }
 
@@ -87,12 +87,12 @@ a:hover {
     border-radius: 8px;
 
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: .6fr min-content;
     grid-template-columns: minmax(500px, 1fr);
 }
 
 .search {
-    margin: 0px 25px;
+    margin: 10px 25px;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -122,7 +122,7 @@ a:hover {
     border: none;
     width: clamp(140px, 22vw, 600px);
     border-radius: 16px;
-    padding: 3px 8px;
+    padding: 1px 8px;
     font-size: 16px;
     background-color: rgba(204, 204, 204, 0.2);
 }
@@ -143,28 +143,33 @@ a:hover {
 .searchIcon {
     margin: 0 10px 0 0;
     position: relative;
-    top: 7px;
+    top: 6px;
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
-.avatar, .avatar2 {
+.avatar, .avatarB {
     object-fit: cover;
     border-radius: 50%;
 }
 
-.avatar2 {
-    width: 70px;
-    height: 70px;
+.avatarB {
+    width: clamp(50px, 6vw, 70px);
+    height: clamp(50px, 6vw, 70px);;
+}
+
+.search div {
+    font-size: 1rem;
 }
 
 .accountAction {
-    margin: 0px 25px 20px;
+    margin: 10px 25px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: row wrap; 
 }
 
 .accountAction > div {
@@ -182,15 +187,16 @@ a:hover {
 }
 
 .accountAction div div:first-of-type div:nth-child(2) {
-font-size: 1.4rem;
+    font-size: clamp(.8rem, 2vw, 1.4rem);
 }
 
 .accountAction button {
-    margin: 0px 15px;
+    margin: 0 0 0 15px;
     background-color: var(--secondary);
     border-radius: 20px;
-    padding: 8px 25px;
-    font-size: .9rem;
+    font-size: clamp(.7rem, 1.2vw, 1.1rem);
+    width: clamp(50px, 8vw, 100px);
+    height: clamp(30px, 3vw, 40px);
     cursor: pointer;
 }
 
@@ -204,5 +210,17 @@ font-size: 1.4rem;
     background-color: var(--main-dark);
     margin: 9px 9px 9px 0;
     border-radius: 8px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.main * {
+    margin: 8px;
+}
+
+.threads {
+    grid-row: 1/3;
 }
 
