@@ -24,7 +24,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: minmax(175px, 1fr) 3.5fr; 
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1.3fr 4fr;
     height: 100vh;
 }
 
@@ -49,6 +49,7 @@ a {
     height: inherit;
     text-decoration: none;
     align-items: center;
+    transition: all 0.3s;
 }
 
 a:hover {
@@ -91,7 +92,7 @@ a:hover {
 }
 
 .search {
-    margin: 7px 25px 0;
+    margin: 0px 25px;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -109,6 +110,7 @@ a:hover {
 
 .bell:hover {
     fill: var(--secondary);
+    transition: all 0.3s;
 }
 
 #searchBar {
@@ -118,7 +120,7 @@ a:hover {
     outline: none;
     color: var(--font);
     border: none;
-    width: clamp(140px, 22vw, 450px);
+    width: clamp(140px, 22vw, 600px);
     border-radius: 16px;
     padding: 3px 8px;
     font-size: 16px;
@@ -147,8 +149,55 @@ a:hover {
 .avatar {
     width: 50px;
     height: 50px;
+}
+
+.avatar, .avatar2 {
     object-fit: cover;
     border-radius: 50%;
+}
+
+.avatar2 {
+    width: 70px;
+    height: 70px;
+}
+
+.accountAction {
+    margin: 0px 25px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accountAction > div {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.accountAction img {
+    margin-right: 20px;
+}
+
+.accountAction div div:first-of-type div:first-child {
+    font-size: .8rem;
+}
+
+.accountAction div div:first-of-type div:nth-child(2) {
+font-size: 1.4rem;
+}
+
+.accountAction button {
+    margin: 0px 15px;
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.accountAction button:hover {
+    background-color: var(--font);
+    color: var(--secondary);
+    transition: all 0.3s;
 }
 
 .main {
@@ -156,3 +205,4 @@ a:hover {
     margin: 9px 9px 9px 0;
     border-radius: 8px;
 }
+
