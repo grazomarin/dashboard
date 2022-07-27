@@ -4,7 +4,7 @@
 }
 
 :root {
-    --main-dark: #080808;
+    --main-dark: #070707;
     --main-light: #393E46;
     --secondary: #00ADB5;
     --font: #ccc;
@@ -23,7 +23,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: minmax(175px, 1fr) minmax(490px, 80%); 
+    grid-template-columns: minmax(190px, 1fr) minmax(490px, 82%); 
     grid-template-rows: min-content 4fr;
     height: 100vh;
 }
@@ -42,7 +42,8 @@ body {
 }
 
 .sidebar > div {
-    position: fixed;
+    position: sticky;
+    top: 0;
 }
 
 .sidebar > div > div {
@@ -51,6 +52,7 @@ body {
     padding-left: min(40px, 2vw);
     font-size: clamp(1rem, 1.6vw, 1.2rem);
 }
+
 
 a {
     display: flex;
@@ -66,7 +68,7 @@ a:hover {
 
 .sidebar > div > div:nth-child(1) {
     width: 100%;
-    height: 80px;
+    height: 70px;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
@@ -74,7 +76,7 @@ a:hover {
     color: var(--secondary);
 }
 
-.sidebar > div > div:nth-child(7) {
+.sidebar > div > div:nth-child(6) {
     margin-bottom: 25px;
 }
 
@@ -93,7 +95,7 @@ a:hover {
     background-color: var(--main-dark);
     margin: 9px 9px 0 0;
     border-radius: 8px;
-
+    
     display: grid;
     grid-template-rows: .6fr min-content;
     grid-template-columns: minmax(500px, 1fr);
@@ -114,7 +116,6 @@ a:hover {
     gap: 20px;
     font-size: 18px;
 }
-
 
 .bell:hover {
     fill: var(--secondary);
@@ -221,9 +222,10 @@ a:hover {
     border-radius: 8px;
     
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 800px 1fr;
     grid-template-columns: 2fr 1fr;
 }
+
 .threads {
     margin: 8px 10px 8px 25px !important;
     grid-row: 1/3;
@@ -237,7 +239,7 @@ a:hover {
     margin: 0 8px 8px 8px;
 }
 
-.main > div > div:nth-child(1) {
+.threads > div:nth-child(1), .mainRight > div > div:nth-child(1) {
     font-size: clamp(.9rem, 2vw, 1.3rem);
     margin:  0 0 8px 0;
 }
@@ -257,14 +259,61 @@ a:hover {
 
 }
 
-.threads > div:nth-child(2) {
+.thContent {
     display: grid;
     grid-auto-rows: 140px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 12px;
 }
 
+.thread {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
 
+.thIcons{
+    margin: 10px;
+    grid-row: 3/4;
+    justify-self: end;
 
+    display: flex;
+    gap: 12px;
+}
 
+.thIcons svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--font);
+    transition: all 0.2s ease-in-out;
+}
 
+.thIcons svg:hover {
+    fill: var(--secondary);
+}
+
+.thread h1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    margin: 5px 10px;  
+}
+
+.thread > div:nth-child(2){
+    font-size: 0.9rem;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 10px;  
+}
+
+.discover, .friends {
+}
+
+.mainRight {
+    display: grid;
+    height: 100%;
+    grid-template-rows: minmax(1fr, 300px) minmax(1fr, 300px);
+    position: sticky;
+    top: 0;
+}
