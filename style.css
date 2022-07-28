@@ -231,13 +231,6 @@ a:hover {
     grid-row: 1/3;
 }
 
-.discover {
-    margin: 8px;
-}
-
-.friends {
-    margin: 0 8px 8px 8px;
-}
 
 .threads > div:nth-child(1), .mainRight > div > div:nth-child(1) {
     font-size: clamp(.9rem, 2vw, 1.3rem);
@@ -252,11 +245,10 @@ a:hover {
 
 .thContent > div:hover {
     cursor: pointer;
-    border-radius: 10px;
     transform: scale(1.01);
     box-shadow:  0 0 5px var(--secondary);
     transition: all 0.2s ease-in-out;
-
+    
 }
 
 .thContent {
@@ -275,7 +267,7 @@ a:hover {
     margin: 10px;
     grid-row: 3/4;
     justify-self: end;
-
+    
     display: flex;
     gap: 12px;
 }
@@ -307,13 +299,87 @@ a:hover {
     margin: 0 10px;  
 }
 
-.discover, .friends {
-}
-
 .mainRight {
     display: grid;
     height: 100%;
-    grid-template-rows: minmax(1fr, 300px) minmax(1fr, 300px);
+    grid-auto-rows: min-content;
     position: sticky;
     top: 0;
 }
+
+.discover {
+    margin: 8px;
+}
+
+.friends {
+    margin: 0 8px 8px 8px;
+}
+
+.discover, .friends {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
+.discContent, .frContent {
+    background-color: #101010;
+    margin: 0px 9px 10px 0;
+    border-radius: 10px;
+    display: grid;
+}
+
+.discContent {
+    grid-auto-rows: 100px min-content;
+    padding-bottom: 10px;
+
+}
+
+.frContent {
+    grid-template-rows: auto;
+}
+
+.line {
+    margin: 3px 15px 0 15px;
+    width: calc(100% - 30px);
+    height: 1.5px;
+    border-radius: 16px;
+    background-color: #303030;
+}
+
+.rightTh {
+    margin: 10px 15px 9px 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.discover .rightTh div {
+    font-size: 0.8rem;
+}
+
+.frContent {
+    text-align: start;
+} 
+
+.frContent .rightTh {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.users div:last-child {
+    font-size: .75rem;
+}
+
+.rightTh img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+}
+
+h4 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 0 5px 0;
+}
+
